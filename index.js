@@ -30,12 +30,14 @@ function deleteLast() {
 
 function calculateResult() {
     try {
-        if (ans.includes("143")) {
+        const ans = eval(display.value);
+        if (ans === 143) {
             alert("You are a idiot");
         }
-        if (ans.includes("Infinity")) {
+        if (!isFinite(ans)) {
             alert("what the f**k");
         }
+        display.value = ans;
     } catch (error) {
         display.value = "Error";
     }
@@ -77,4 +79,5 @@ document.addEventListener('keydown', function (event) {
         appendOperator('/');
     }
 });
+
 
